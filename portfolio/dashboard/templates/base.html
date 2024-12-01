@@ -16,10 +16,16 @@
 
     <body class="bg-gray-950">
     <script src="{% static 'scripts.js' %}"></script>
-     <nav class="py-6 px-6 flex justify-between h-40 items-center bg-slate-900"х>
+     <nav class="py-6 px-6 flex justify-between h-40 items-center bg-slate-900">
+        {%if user.is_authenticated %}
          <a href="{% url 'general:home' %}" class="text-2xl font-sans bg-gradient-to-r text-cyan-300">
              Bahodir Erkinov
          </a>
+         {%else%}
+         <a href="{% url 'dashboard:dashboard_admin' %}" class="text-2xl font-sans bg-gradient-to-r text-cyan-300">
+             Bahodir Erkinov
+         </a>
+         {%endif%}
          <div class="space-x-6 ">
              <a href="{% url 'general:home' %}" class="text-lg text-slate-50 font-semibold hover:text-gray-500">
                  Bosh sahifa
