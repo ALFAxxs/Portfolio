@@ -26,9 +26,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/dashboard/dashboard_admin/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/dashboard/login/' #Django will redirect users when they are not authenticated
+LOGIN_REDIRECT_URL = '/dashboard/dashboard_admin/' #Specifies the URL to redirect a user after they successfully log in.
+LOGOUT_REDIRECT_URL = '/' #Specifies the URL to redirect a user after they log out.
+
 # Application definition
 
 INSTALLED_APPS = [

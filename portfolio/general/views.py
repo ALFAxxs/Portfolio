@@ -21,4 +21,3 @@ def project(request):
     }
     return render(request, 'projects.html', context)
 
-#here is another file to check working git push system

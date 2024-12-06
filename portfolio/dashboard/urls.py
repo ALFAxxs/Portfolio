@@ -3,8 +3,6 @@ from . import views
 from .forms import LoginForm
 from django.contrib.auth import views as auth_views
 
-
-
 app_name = 'dashboard'
 urlpatterns = [
     path('base/', views.first_test, name='first_page'),
