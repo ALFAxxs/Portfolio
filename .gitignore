@@ -17,7 +17,7 @@ media
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-static
+#static
 # AWS User-specific
 .idea/**/aws.xml
 
@@ -140,6 +140,6 @@ GitHub.sublime-settings
 .history
 
 #migrations
-migrations
-media
+#migrations
+#media
 
