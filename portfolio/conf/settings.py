@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hp2+4r_^z$)ek=^5z*iv)#dji6h0j#gh)xq-o)vjn&2*_##*w='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 LOGIN_URL = '/dashboard/login/'  #Django will redirect users when they are not authenticated
 LOGIN_REDIRECT_URL = '/dashboard/dashboard_admin/'  #Specifies the URL to redirect a user after they successfully log in.
@@ -33,12 +33,14 @@ LOGOUT_REDIRECT_URL = '/'  #Specifies the URL to redirect a user after they log 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 
     #my_apps
     'general',
@@ -130,9 +132,10 @@ STATIC_ROOT = os.path.join(
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# STORAGES = {
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     }
+# }
