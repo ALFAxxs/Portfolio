@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hp2+4r_^z$)ek=^5z*iv)#dji6h0j#gh)xq-o)vjn&2*_##*w='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['159.89.20.219','www.bahodirdev.uz', 'bahodirdev.uz']
 
 LOGIN_URL = '/dashboard/login/'  #Django will redirect users when they are not authenticated
 LOGIN_REDIRECT_URL = '/dashboard/dashboard_admin/'  #Specifies the URL to redirect a user after they successfully log in.
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',	
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -124,18 +124,19 @@ USE_TZ = True
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Default primary key field type
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(
-    BASE_DIR / "static",  # If you have a "static" folder in your project root
-)
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "static"
+#STATIC_ROOT = os.path.join(
+#    BASE_DIR / "static",  # If you have a "static" folder in your project root
+#)
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# STORAGES = {
-#     "staticfiles": {
-#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-#     }
-# }
+#STORAGES = {
+#    "staticfiles": {
+#        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#	}
+#}
